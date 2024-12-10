@@ -1,0 +1,14 @@
+C:\Users\tudor\Downloads\Lab1MAPvirusi\Lab1MAP_BUN\lab9\bin\Debug\net9.0\lab9.exe
+C:\Users\tudor\Downloads\Lab1MAPvirusi\Lab1MAP_BUN\lab9\bin\Debug\net9.0\lab9.deps.json
+C:\Users\tudor\Downloads\Lab1MAPvirusi\Lab1MAP_BUN\lab9\bin\Debug\net9.0\lab9.runtimeconfig.json
+C:\Users\tudor\Downloads\Lab1MAPvirusi\Lab1MAP_BUN\lab9\bin\Debug\net9.0\lab9.dll
+C:\Users\tudor\Downloads\Lab1MAPvirusi\Lab1MAP_BUN\lab9\bin\Debug\net9.0\lab9.pdb
+C:\Users\tudor\Downloads\Lab1MAPvirusi\Lab1MAP_BUN\lab9\obj\Debug\net9.0\lab9.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tudor\Downloads\Lab1MAPvirusi\Lab1MAP_BUN\lab9\obj\Debug\net9.0\lab9.AssemblyInfoInputs.cache
+C:\Users\tudor\Downloads\Lab1MAPvirusi\Lab1MAP_BUN\lab9\obj\Debug\net9.0\lab9.AssemblyInfo.cs
+C:\Users\tudor\Downloads\Lab1MAPvirusi\Lab1MAP_BUN\lab9\obj\Debug\net9.0\lab9.csproj.CoreCompileInputs.cache
+C:\Users\tudor\Downloads\Lab1MAPvirusi\Lab1MAP_BUN\lab9\obj\Debug\net9.0\lab9.dll
+C:\Users\tudor\Downloads\Lab1MAPvirusi\Lab1MAP_BUN\lab9\obj\Debug\net9.0\refint\lab9.dll
+C:\Users\tudor\Downloads\Lab1MAPvirusi\Lab1MAP_BUN\lab9\obj\Debug\net9.0\lab9.pdb
+C:\Users\tudor\Downloads\Lab1MAPvirusi\Lab1MAP_BUN\lab9\obj\Debug\net9.0\lab9.genruntimeconfig.cache
+C:\Users\tudor\Downloads\Lab1MAPvirusi\Lab1MAP_BUN\lab9\obj\Debug\net9.0\ref\lab9.dll
