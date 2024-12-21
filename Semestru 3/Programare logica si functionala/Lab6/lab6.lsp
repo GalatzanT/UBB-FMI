@@ -1,8 +1,8 @@
-(defun suma_atom (lst)
+(defun suma_atom (x)
 (cond
-((numberp lst) lst)
-((listp lst) (apply #'+ (mapcar #' suma_atom lst)))
-(t 0)))
+((numberp x) x)
+((atom x) 0)
+(t (apply #'+ (mapcar #' suma_atom x)))))
 
 
 (setq ex1 '(1 2 3 4))
