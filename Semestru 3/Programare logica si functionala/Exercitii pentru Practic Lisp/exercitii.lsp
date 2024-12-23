@@ -69,8 +69,6 @@
 
 (print (atom_dat '(1 2 3 4 1 1 5) 1))
 
-;2
-
 
 ;Definiti o functie care selecteaza al n-lea element al unei liste, sau
 ;NIL, daca nu exista.
@@ -131,3 +129,66 @@
 			
 			
 (print (multime '(1 2 4 1 2 5 12 1 2 4 3 2 4 5 6 5 6 5 6 69)))
+
+
+
+;3
+
+;produsul a 2 vectori
+
+(defun produs (a b)
+(cond
+((or (null a) (null b)) '())
+(t (cons (* (car a) (car b)) (produs (cdr a) (cdr b))))))
+
+(print (produs '(10 20 30) '(3 3 3)))
+
+
+;adancimea unei liste 
+(defun depth (lst)
+(cond
+((null lst) 0)
+((atom lst) 0)
+(t  (max 1 (+ 1 (depth (car lst))) (depth (cdr lst))))))
+
+
+
+(print (depth '((1 2) (3 (4 (5))))))
+(print (depth '(1 2 3))) 
+(print (depth '((1 2) (3 4)))) 
+(print (depth '((1 (2)) 3)))
+(print (depth '((1 2) (3 (4 (5)))))) 
+
+
+
+;;functie care sorteaza fara dubluri o lista liniara 
+
+
+(defun  list_to_set (lst)
+(cond
+((null lst) nil)
+((member (car lst) (cdr lst)) (list_to_set (cdr lst)))
+(t (cons (car lst) (list_to_set (cdr lst))))))
+
+(defun insert_sorted (x lst)
+(cond
+((null lst) (list x))
+((<= x (car lst)) (cons x lst))
+(t (cons (car lst) (insert_sorted x (cdr lst))))))
+
+(defun sorted_list (lst)
+(cond
+((null lst) nil)
+(t (insert_sorted (car lst) (sorted_list (cdr lst))))))
+
+
+(defun list_to_oredered_set (lst)
+(sorted_list (list_to_set lst)))
+
+;Sa se scrie o functie care intoarce intersectia a doua multimi.
+
+(defun intersectie_multimi (a b)
+(cond
+((or (null a) (null b)) nil)
+((member (car a) b) (cons (car a) (intersectie_multimi (cdr a) b)))
+(t (intersectie_multimi( (cdr a) b)))))
