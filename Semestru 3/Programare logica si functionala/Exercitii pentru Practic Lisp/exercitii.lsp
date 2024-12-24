@@ -192,3 +192,24 @@
 ((or (null a) (null b)) nil)
 ((member (car a) b) (cons (car a) (intersectie_multimi (cdr a) b)))
 (t (intersectie_multimi( (cdr a) b)))))
+
+
+;4
+
+; Definiti o functie care intoarce suma a doi vectori.
+
+
+(defun suma (a b)
+(cond
+((and (null a) (null b)) nil)  
+((null a) (cons (car b) (suma a (cdr b))))
+((null b) (cons (car a) (suma (cdr a) b)))
+(t (cons (+ (car a) (car b)) (suma (cdr a) (cdr b))))))
+
+
+(print (suma '(1 2 3) '(4 5 6)))   ; Expected Output: (5 7 9)
+(print (suma '(1 2) '(4 5 6)))     ; Expected Output: (5 7 6) (because the first list is shorter)
+(print (suma '(1 2 3) '(4)))       ; Expected Output: (5 2 3) (because the second list is shorter)
+(print (suma '() '(4 5 6)))        ; Expected Output: (4 5 6) (empty list + other list)
+(print (suma '(1 2 3) '()))        ; Expected Output: (1 2 3) (other list + empty list)
+(print (suma '() '()))             ; Expected Output: NIL (both lists empty)(print (depth '(1 2 3))) 
