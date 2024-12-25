@@ -213,3 +213,58 @@
 (print (suma '() '(4 5 6)))        ; Expected Output: (4 5 6) (empty list + other list)
 (print (suma '(1 2 3) '()))        ; Expected Output: (1 2 3) (other list + empty list)
 (print (suma '() '()))             ; Expected Output: NIL (both lists empty)(print (depth '(1 2 3))) 
+
+
+;Definiti o functie care obtine dintr-o lista data lista tuturor atomilor
+;care apar, pe orice nivel, dar in aceeasi ordine. De exemplu:
+;(((A B) C) (D E)) --> (A B C D E)
+
+
+(defun atomi_ordine (lst)
+(cond
+((null lst) nil)
+((atom (car lst))(if (null (car lst)) 
+         (atomi_ordine (cdr lst)) (cons (car lst) (atomi_ordine (cdr lst)))))
+((listp (car lst)) (append (atomi_ordine (car lst)) (atomi_ordine (cdr lst))))))
+
+
+
+(print (atomi_ordine '((1 2 2) 3 (4 (4 5)))))
+; Expected: (1 2 2 3 4 4 5)
+(print (atomi_ordine '(("a" 1) (2 ("b" (3 4))))))
+; Expected: ("a" 1 2 "b" 3 4)
+(print (atomi_ordine '((1 ()) ((2 (3))) (4 ()) 5)))
+; Expected: (1 2 3 4 5)
+
+
+;Sa se scrie o functie care plecand de la o lista data ca argument,
+;inverseaza numai secventele continue de atomi. Exemplu:
+;(a b c (d (e f) g h i)) ==> (c b a (d (f e) i h g))
+
+
+(defun inverseaza (lst)
+  (cond
+    ((null lst) nil)
+    ((atom lst) lst)
+    ((listp lst)
+     (let ((reversed (mapcar #'inverseaza lst)))
+       (reverse reversed)))))
+
+; Test cases:
+(print (inverseaza '(a b c (d (e f) g h i))))  ; => (c b a (d (f e) i h g))
+(print (inverseaza '(1 2 (3 4 (5 6) 7) 8)))    ; => (8 (7 (6 5) 4 3) 2 1)
+
+
+(defun max-superficial (lst)
+ (cond
+   ((null lst) nil)
+   ((numberp (car lst))
+     (let ((first (car lst))
+           (rest-max (max-superficial (cdr lst))))
+       (if rest-max
+           (max first rest-max)
+           first)))
+   (t (max-superficial (cdr lst)))))
+
+; Test
+(max-superficial '(1 a 5 (2 3) b 4)) ; => 5
