@@ -138,4 +138,64 @@ join Atractii a on n.cod_a=a.cod_a;
 select distinct nota from Note
 */
 
+--11
 
+select s.nume as Numele_sectiuni, a.nume_a as Numele_atractieri, a.descriere_a as Descriere  from Sectiuni s
+full join Atractii a on s.cod_s=a.cod_s
+
+--12
+select a.nume_a as numele_atractiei, a.varsta_min as varsta_minima, count(n.cod_a) as numarul_de_note 
+from Atractii a
+left join Note n on a.cod_a=n.cod_a
+Group by a.nume_a, a.varsta_min
+having count(n.cod_a) >=2;
+
+--13
+
+select 
+	c.nume_categorie as Numele_Categoriei,
+	v.nume_v as Numele_Vizitatorului,
+	n.nota as Nota,
+	a.nume_a as Numele_Atractiei,
+	a.descriere_a as Descrierea_Atractiei
+from CategoriiVizitatori c
+inner join Vizitatori v on c.cod_cv=v.cod_cv
+inner join Note n on v.cod_v=n.cod_v
+inner join Atractii a on a.cod_a =n.cod_a
+group by   c.nume_categorie,  v.nume_v, n.nota, a.nume_a, a.descriere_a
+having c.nume_categorie<>'adulti' and count(n.cod_v) >=1
+
+
+--14
+
+select
+	max(N.nota) as nota_maxima,
+	a.nume_a as numele_atractiei
+from Note n
+inner join Atractii a on n.cod_a=a.cod_a
+group by a.nume_a;
+
+--15
+select
+	min(N.nota) as nota_maxima,
+	a.nume_a as numele_atractiei
+from Note n
+inner join Atractii a on n.cod_a=a.cod_a
+group by a.nume_a;
+
+
+--16
+
+select
+	nume_v,
+	email_v
+from Vizitatori 
+where cod_cv is NULL;
+
+-- 17
+
+select
+	nume_a,
+	descriere_a
+from Atractii
+where cod_a is not null;
