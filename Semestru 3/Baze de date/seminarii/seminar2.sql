@@ -1,6 +1,6 @@
 Use ParcDistractii
 go
-/*
+
 
 -- 1
 
@@ -136,7 +136,7 @@ join Atractii a on n.cod_a=a.cod_a;
 
 --10
 select distinct nota from Note
-*/
+
 
 --11
 
