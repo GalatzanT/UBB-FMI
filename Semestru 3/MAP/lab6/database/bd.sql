@@ -17,3 +17,16 @@ CREATE TABLE Prietenii (
     CONSTRAINT unique_friendship UNIQUE (id_user1, id_user2),
     CONSTRAINT no_self_friendship CHECK (id_user1 <> id_user2)
 );
+
+
+create table cereri
+(
+	id serial primary key,
+	id_user1 BIGINT NOT NULL,
+	id_user2 bigint not null,
+	time timestamp default CURRENT_TIMESTAMP not null,
+	status varchar(100),
+	constraint fk_user1 foreign key (id_user1) references Utilizatori(id) on delete cascade,
+	constraint fk_user2 foreign key (id_user2) references Utilizatori(id) on delete cascade,
+	constraint unigue_request unique (id_user1,id_user2)
+);	
