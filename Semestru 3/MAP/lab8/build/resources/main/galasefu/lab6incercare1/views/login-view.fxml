@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="galasefu.lab6incercare1.controller.LoginController"
+            prefHeight="400.0" prefWidth="350.0"
+            style="-fx-background-color: #1D3557;"
+            stylesheets="@../css/style.css">
+    <children>
+        <!-- Logo Image -->
+        <ImageView fitHeight="200.0" fitWidth="350.0" layoutX="0" layoutY="0">
+            <image>
+                <Image url="@../images/logo2.jpg"/>
+            </image>
+        </ImageView>
+
+        <!-- Login Form -->
+        <VBox alignment="CENTER" layoutX="25.0" layoutY="220.0" spacing="20.0"
+              prefWidth="300.0"
+              style="-fx-background-color: #457B9D; -fx-padding: 20; -fx-border-color: #A8DADC; -fx-border-width: 2;">
+            <Label text="Autentificare" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #F1F1F1;" />
+            <TextField fx:id="cauta_nume" promptText="Nume" style="-fx-background-color: #F1FAEE; -fx-text-fill: #1D3557;"/>
+            <PasswordField fx:id="cauta_parola" promptText="Parola" style="-fx-background-color: #F1FAEE; -fx-text-fill: #1D3557;"/>
+            <Button text="Login" onAction="#handleLogin" style="-fx-background-color: #757575; -fx-text-fill: white;" prefWidth="150.0" />
+            <Label fx:id="erori" textFill="#572fd8" style="-fx-font-size: 14px;" />
+        </VBox>
+    </children>
+</AnchorPane>
