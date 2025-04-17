@@ -1,2 +1,3 @@
-# UBB-FMI
-Here to post all my academic labs and files to help other students and to help me learn using github
+# 🎓 UBB-FMI Coursework
+
+This repository contains my university coursework from the **1st**, **2nd**, and **3rd semesters** of the **"Info RO" specialization** at **UBB-FMI** (Faculty of Mathematics and Computer Science, Babeș-Bolyai University).
